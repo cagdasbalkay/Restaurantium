@@ -1,0 +1,49 @@
+﻿@model UpdateCompanySocialMediaDto
+@{
+    ViewData["Title"] = "UpdateCompanySocialMedia";
+    ViewData["IncludeValidationScripts"] = true;
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Sosyal Medya Hesabı Bilgisi Düzenleme</h4>
+                        <p class="card-subtitle mb-4">Tüm bilgileri eksiksiz olarak doldurarak sosyal medya hesabı düzenleme işlemini tamamlayabilirsiniz!  <a href="https://fontawesome.com/search?o=r&f=brands" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Buraya tıklayarak</a> kullanabileceğiniz ikon sınıflarına kolayca erişim sağlayabilirsiniz.</p>
+
+
+
+                        <form method="post">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" asp-for="CompanySocialMediaID" />
+                            <div class="form-group">
+                                <label for="exampleInputPlatform">Platform</label>
+                                <input type="text" class="form-control" id="exampleInputPlatform" placeholder="Sosyal medya platformu adını giriniz giriniz." asp-for="Platform">
+                                @Html.ValidationMessageFor(x => x.Platform, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUrl">Url</label>
+                                <input type="text" class="form-control" id="exampleInputUrl" placeholder="Sosyal medya hesabı url'sini giriniz." asp-for="Url">
+                                @Html.ValidationMessageFor(x => x.Url, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUrl">İkon Sınıfı</label>
+                                <input type="text" class="form-control" id="exampleInputUrl" placeholder="Sosyal medya hesabı ikon class'ını giriniz." asp-for="IconClass">
+                                @Html.ValidationMessageFor(x => x.IconClass, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

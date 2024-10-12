@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\cagda\\source\\repos\\Restaurantium.Solution\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B39E11B4-1805-4E34-BC9D-A0819DBF7F55}|Restaurantium.Presentation\\Restaurantium.Presentation.csproj|c:\\users\\cagda\\source\\repos\\restaurantium.solution\\restaurantium.presentation\\areas\\admin\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B39E11B4-1805-4E34-BC9D-A0819DBF7F55}|Restaurantium.Presentation\\Restaurantium.Presentation.csproj|solutionrelative:restaurantium.presentation\\areas\\admin\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\cagda\\source\\repos\\Restaurantium.Solution\\Restaurantium.Presentation\\Areas\\Admin\\Views\\About\\Index.cshtml",
+              "RelativeDocumentMoniker": "Restaurantium.Presentation\\Areas\\Admin\\Views\\About\\Index.cshtml",
+              "ToolTip": "C:\\Users\\cagda\\source\\repos\\Restaurantium.Solution\\Restaurantium.Presentation\\Areas\\Admin\\Views\\About\\Index.cshtml",
+              "RelativeToolTip": "Restaurantium.Presentation\\Areas\\Admin\\Views\\About\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-11T19:56:46.83Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

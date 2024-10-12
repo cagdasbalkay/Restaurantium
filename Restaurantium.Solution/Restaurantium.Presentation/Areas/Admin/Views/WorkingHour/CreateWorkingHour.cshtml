@@ -1,0 +1,40 @@
+﻿@model CreateWorkingHourDto
+@{
+    ViewData["Title"] = "CreateWorkingHour";
+    ViewData["IncludeValidationScripts"] = true;
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Çalışma Saati Bilgisi Girişi</h4>
+                        <p class="card-subtitle mb-4">Tüm bilgileri eksiksiz olarak doldurarak footer alanına çalışma saati ekleme işlemini tamamlayabilirsiniz!</p>
+
+                        <form method="post">
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                <label for="exampleInputWeekday">Haftaiçi Çalışma Zamanı</label>
+                                <input type="text" class="form-control" id="exampleInputWeekday" placeholder="Haftaiçi çalışma aralığını giriniz.Örn; Haftaiçi 09:00-18.00" asp-for="WeekDayWorkingHours">
+                                @Html.ValidationMessageFor(x => x.WeekDayWorkingHours, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputWeekend">Haftasonu Çalışma Zamanı</label>
+                                <input type="text" class="form-control" id="exampleInputWeekend" placeholder="Haftasonu çalışma aralığını giriniz.Örn; Haftasonu 10:00-17.00" asp-for="WeekendWorkingHours">
+                                @Html.ValidationMessageFor(x => x.WeekendWorkingHours, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Oluştur</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,90 @@
+﻿@model CreateBookingDto
+
+@{
+    ViewData["Title"] = "Index";
+    ViewData["IncludeValidationScripts"] = true;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="row g-0">
+        <div class="col-md-6">
+            <div class="video">
+               
+                <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/xPPLbEFbCAo?si=xsDOEfqL_Yj1T2qz" data-bs-target="#videoModal">
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-6 bg-dark d-flex align-items-center">
+            <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+                <h5 class="section-title ff-secondary text-start text-primary fw-normal">Rezervasyonlar</h5>
+                <h1 class="text-white mb-4">Hemen Online Rezervasyon Yap</h1>
+                <form method="post">
+                    @Html.AntiForgeryToken()
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="name" asp-for="Name">
+                                <label for="name">Adınız</label>
+                                @Html.ValidationMessageFor(x => x.Name, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" asp-for="Email">
+                                <label for="email">Mail</label>
+                                @Html.ValidationMessageFor(x => x.Email, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating date" id="date3" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" id="datetime" data-target="#date3" data-toggle="datetimepicker" asp-for="Date" />
+                                <label for="datetime">Tarih ve Saat</label>
+                                @Html.ValidationMessageFor(x => x.Date, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="numberOfGuests" max="12" asp-for="NumberOfGuests">
+                                <label for="numberOfGuests">Kişi Sayısı</label>
+                                @Html.ValidationMessageFor(x => x.NumberOfGuests, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="message" style="height: 100px" asp-for="SpecialRequest"></textarea>
+                                <label for="message">Özel İstek</label>
+                                @Html.ValidationMessageFor(x => x.SpecialRequest, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit">Rezervasyon Yap</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-0">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 16:9 aspect ratio -->
+                <div class="ratio ratio-16x9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/xPPLbEFbCAo?si=xsDOEfqL_Yj1T2qz" id="video" allowfullscreen allowscriptaccess="always"
+                            allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

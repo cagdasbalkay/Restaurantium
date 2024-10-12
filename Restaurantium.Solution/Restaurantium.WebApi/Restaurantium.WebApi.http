@@ -1,0 +1,6 @@
+@Restaurantium.WebApi_HostAddress = http://localhost:5251
+
+GET {{Restaurantium.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

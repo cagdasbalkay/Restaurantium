@@ -1,0 +1,39 @@
+﻿@model CreateBannerDto
+@{
+    ViewData["Title"] = "CreateBanner";
+    ViewData["IncludeValidationScripts"] = true;
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yeni Banner Bilgisi Girişi</h4>
+                        <p class="card-subtitle mb-4">Tüm bilgileri eksiksiz olarak doldurarak anasayfada bulunan banner alanına veri ekleme işlemini tamamlayabilirsiniz!</p>
+
+                        <form method="post">
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                <label for="exampleInputTitle">Başlık</label>
+                                <input type="text" class="form-control" id="exampleInputTitle" placeholder="Banner alanının başlığını giriniz." asp-for="title">
+                                @Html.ValidationMessageFor(x => x.title, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputDescription">Açıklama</label>
+                                <input type="text" class="form-control" id="exampleInputDescription" placeholder="Banner alanında yazacak açıklamayı giriniz." asp-for="description">
+                                @Html.ValidationMessageFor(x => x.description, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Oluştur</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

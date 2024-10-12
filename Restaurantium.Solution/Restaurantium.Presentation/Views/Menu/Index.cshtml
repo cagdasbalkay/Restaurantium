@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Yemek Menüsü</h5>
+            <h1 class="mb-5">Restoranımızın Kaliteli Yemekleri</h1>
+        </div>
+        <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
+            <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
+                <li class="nav-item">
+                    <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1" data-category-id="1">
+                        <i class="fa fa-coffee fa-2x text-primary"></i>
+                        <div class="ps-3">
+                            <small class="text-body">Popüler</small>
+                            <h6 class="mt-n1 mb-0">Kahvaltı</h6>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2" data-category-id="2">
+                        <i class="fa fa-hamburger fa-2x text-primary"></i>
+                        <div class="ps-3">
+                            <small class="text-body">Popüler</small>
+                            <h6 class="mt-n1 mb-0">Öğle Yemeği</h6>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-3" data-category-id="3">
+                        <i class="fa fa-utensils fa-2x text-primary"></i>
+                        <div class="ps-3">
+                            <small class="text-body">Popüler</small>
+                            <h6 class="mt-n1 mb-0">Akşam Yemeği</h6>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <div class="row g-4" id="menu-items">
+                        <!-- Menü ögeleri buraya yüklenecek -->
+                    </div>
+                </div>
+                <div id="tab-2" class="tab-pane fade show p-0">
+                    <div class="row g-4" id="menu-items">
+                        <!-- Menü ögeleri buraya yüklenecek -->
+                    </div>
+                </div>
+                <div id="tab-3" class="tab-pane fade show p-0">
+                    <div class="row g-4" id="menu-items">
+                        <!-- Menü ögeleri buraya yüklenecek -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const firstTab = document.querySelector(".nav-pills .nav-item a.active");
+            if (firstTab) {
+                const categoryId = firstTab.getAttribute("data-category-id");
+                const tabId = firstTab.getAttribute("href").substring(1); // #tab-1 -> tab-1
+                fetchMenuItems(categoryId, tabId);
+            }
+
+            const tabs = document.querySelectorAll(".nav-item a");
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    const categoryId = this.getAttribute("data-category-id");
+                    const tabId = this.getAttribute("href").substring(1); // #tab-1 -> tab-1
+                    fetchMenuItems(categoryId, tabId);
+                });
+            });
+
+            function fetchMenuItems(categoryId, tabId) {
+                fetch(`/Menu/FetchMenuItems?categoryId=${categoryId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const menuContainer = document.querySelector(`#${tabId} #menu-items`);
+                        menuContainer.innerHTML = "";
+                        data.forEach(item => {
+                            const itemHtml = `
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="${item.imageUrl}" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>${item.foodName}</span>
+                                                <span class="text-primary"> ₺ ${item.price}</span>
+                                            </h5>
+                                            <small class="fst-italic">${item.description}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                            menuContainer.innerHTML += itemHtml;
+                        });
+                    })
+                    .catch(error => console.error("Error fetching menu items:", error));
+            }
+        });
+    </script>
+}

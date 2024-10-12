@@ -1,0 +1,68 @@
+﻿@model List<ResultFoodDto>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yemek Listesi</h4>
+                        <p class="card-subtitle mb-4">Bu sayfada restoranda mevcut olan yemekleri görüntüleyebilir, ekleyebilir, silebilir ve güncelleyebilirsiniz.</p>
+                        @if (Model.Count == 0)
+                        {
+                            <div class="alert alert-danger at-3" role="alert">
+                                <p><i>Daha önce eklenen herhangi bir veri <b>bulunamadı.</b> ekle butonunu kullanarak yeni veri girişi yapabilirsiniz.</i></p>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="table-responsive">
+                                <table class="table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Yemek</th>
+                                            <th>Açıklama</th>
+                                            <th>Fiyat</th>
+                                            <th>Sil</th>
+                                            <th>Güncelle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            count++;
+                                            <tr>
+                                                <td>@count</td>
+                                                <td><img src="@item.ImageUrl" class="rounded-circle" width="50" height="50" style="margin-right: 7px;" />@item.FoodName</td>
+                                                <td>@item.Description</td>
+                                                <td>@item.Price</td>
+                                                <td><a href="/Admin/Food/RemoveFood/@item.FoodID" class="btn btn-outline-danger">Sil</a></td>
+                                                <td><a href="/Admin/Food/UpdateFood/@item.FoodID" class="btn btn-outline-success">Güncelle</a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                      
+                            <a href="/Admin/Food/CreateFood/" class="btn btn-outline-primary">Ekle</a>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

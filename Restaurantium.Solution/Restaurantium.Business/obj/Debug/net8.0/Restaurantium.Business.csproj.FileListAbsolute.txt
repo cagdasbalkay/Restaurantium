@@ -1,0 +1,17 @@
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\bin\Debug\net8.0\Restaurantium.Business.deps.json
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\bin\Debug\net8.0\Restaurantium.Business.dll
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\bin\Debug\net8.0\Restaurantium.Business.pdb
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\bin\Debug\net8.0\Restaurantium.DataAccess.dll
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\bin\Debug\net8.0\Restaurantium.Dto.dll
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\bin\Debug\net8.0\Restaurantium.DataAccess.pdb
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\bin\Debug\net8.0\Restaurantium.Dto.pdb
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\obj\Debug\net8.0\Restaurantium.Business.csproj.AssemblyReference.cache
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\obj\Debug\net8.0\Restaurantium.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\obj\Debug\net8.0\Restaurantium.Business.AssemblyInfoInputs.cache
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\obj\Debug\net8.0\Restaurantium.Business.AssemblyInfo.cs
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\obj\Debug\net8.0\Restaurantium.Business.csproj.CoreCompileInputs.cache
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\obj\Debug\net8.0\Restaura.E3C1C36C.Up2Date
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\obj\Debug\net8.0\Restaurantium.Business.dll
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\obj\Debug\net8.0\refint\Restaurantium.Business.dll
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\obj\Debug\net8.0\Restaurantium.Business.pdb
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Business\obj\Debug\net8.0\ref\Restaurantium.Business.dll

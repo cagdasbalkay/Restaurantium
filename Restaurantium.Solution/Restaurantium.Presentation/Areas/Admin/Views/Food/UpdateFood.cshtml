@@ -1,0 +1,55 @@
+﻿@model UpdateFoodDto
+@{
+    ViewData["Title"] = "UpdateFood";
+    ViewData["IncludeValidationScripts"] = true;
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yemek Bilgisi Düzenleme</h4>
+                        <p class="card-subtitle mb-4">Tüm bilgileri eksiksiz olarak doldurarak yemek düzenleme işlemini tamamlayabilirsiniz!</p>
+
+                        <form method="post">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" asp-for="FoodID" />
+                            <div class="form-group">
+                                <label for="exampleInputFood">Yemek</label>
+                                <input type="text" class="form-control" id="exampleInputFood" placeholder="Yemeğin adını giriniz." asp-for="FoodName">
+                                @Html.ValidationMessageFor(x => x.FoodName, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputDescription">Açıklama</label>
+                                <input type="text" class="form-control" id="exampleInputDescription" placeholder="Yemek için açıklama giriniz." asp-for="Description">
+                                @Html.ValidationMessageFor(x => x.Description, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputPrice">Fiyat</label>
+                                <input type="number" step="0.01" class="form-control" id="exampleInputPrice" placeholder="Yemeğin fiyatını giriniz." asp-for="Price">
+                                @Html.ValidationMessageFor(x => x.Price, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputDescription">Görsel</label>
+                                <input type="text" class="form-control" id="exampleInputDescription" placeholder="Yemek için görsel url'si giriniz." asp-for="ImageUrl">
+                                @Html.ValidationMessageFor(x => x.ImageUrl, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+
+
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

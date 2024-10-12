@@ -1,0 +1,64 @@
+﻿@model CreateChefDto
+@{
+    ViewData["Title"] = "CreateChef";
+    ViewData["IncludeValidationScripts"] = true;
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yeni Şef Girişi</h4>
+                        <p class="card-subtitle mb-4">Tüm bilgileri eksiksiz olarak doldurarak şef ekleme işlemini tamamlayabilirsiniz! Sosyal medya hesabı linklerini yazarken lütfen https://www.facebook.com/ formatında girmeye dikkat ediniz.</p>
+
+                        <form method="post">
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                <label for="exampleInputChef">Şef</label>
+                                <input type="text" class="form-control" id="exampleInputChef" placeholder="Şefin ismini giriniz." asp-for="Name">
+                                @Html.ValidationMessageFor(x => x.Name, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputProfession">Uzmanlık</label>
+                                <input type="text" class="form-control" id="exampleInputProfession" placeholder="Şefin uzmanlık alanını giriniz.Örneğin: İtalyan Yemekleri" asp-for="Profession">
+                                @Html.ValidationMessageFor(x => x.Profession, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputImage">Şefin Resmi</label>
+                                <input type="text" class="form-control" id="exampleInputImage" placeholder="Şefin resminin url adresini giriniz." asp-for="ImageUrl">
+                                @Html.ValidationMessageFor(x => x.ImageUrl, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+                     
+                            <div class="form-group">
+                                <label for="exampleInputFacebook">Facebook</label>
+                                <input type="text" class="form-control" id="exampleInputFacebook" placeholder="Şefin facebook hesabı url'sini  giriniz" asp-for="FacebookUrl">
+                                @Html.ValidationMessageFor(x => x.FacebookUrl, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputTwitter">Twitter</label>
+                                <input type="text" class="form-control" id="exampleInputTwitter" placeholder="Şefin twitter hesabı url'sini giriniz" asp-for="TwitterUrl">
+                                @Html.ValidationMessageFor(x => x.TwitterUrl, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputInstagram">Instagram</label>
+                                <input type="text" class="form-control" id="exampleInputInstagram" placeholder="Şefin instagram hesabı url'sini giriniz" asp-for="InstagramUrl">
+                                @Html.ValidationMessageFor(x => x.InstagramUrl, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Oluştur</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

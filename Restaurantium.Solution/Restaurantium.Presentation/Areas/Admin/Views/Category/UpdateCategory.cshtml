@@ -1,0 +1,35 @@
+﻿@model UpdateCategoryDto
+@{
+    ViewData["Title"] = "UpdateCategory";
+    ViewData["IncludeValidationScripts"] = true;
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Kategori Bilgisi Düzenleme</h4>
+                        <p class="card-subtitle mb-4">Tüm bilgileri eksiksiz olarak doldurarak kategori düzenleme işlemini tamamlayabilirsiniz!</p>
+
+                        <form method="post">
+                            @Html.AntiForgeryToken()
+                            <input type ="hidden" asp-for="CategoryID" />
+                            <div class="form-group">
+                                <label for="exampleInputCategory">Kategori</label>
+                                <input type="text" class="form-control" id="exampleInputCategory" asp-for="CategoryName">
+                                @Html.ValidationMessageFor(x => x.CategoryName, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

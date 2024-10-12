@@ -1,0 +1,71 @@
+﻿@model List<ResultAboutDto>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Ana Sayfa Hakkımızda Alanı</h4>
+                        <p class="card-subtitle mb-4">Bu sayfada anasayfa hakkımızda alanıyla ilgili verileri görüntüleyebilir, ekleyebilir, silebilir ve güncelleyebilirsiniz.Temada uyumsuzluk olmaması amacıyla veri sınırı 1 tane olmak üzere sınırlandırılmıştır.</p>
+                        @if (Model.Count == 0)
+                        {
+                            <div class="alert alert-danger at-3" role="alert">
+                                <p><i>Daha önce eklenen herhangi bir veri <b>bulunamadı.</b> ekle butonunu kullanarak yeni veri girişi yapabilirsiniz.</i></p>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="table-responsive">
+                                <table class="table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Açıklama</th>
+                                            <th>Deneyim(Yıl)</th>
+                                            <th>Sil</th>
+                                            <th>Güncelle</th>
+                                            <th>Sitede Görüntüle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            count++;
+                                            <tr>
+                                                <td>@item.Description</td>
+                                                <td>@item.YearsOfExperience</td>
+
+
+                                                <td><a href="/Admin/About/RemoveAbout/@item.AboutID" class="btn btn-outline-danger">Sil</a></td>
+                                                <td><a href="/Admin/About/UpdateAbout/@item.AboutID" class="btn btn-outline-success">Güncelle</a></td>
+                                                <td><a href="/Home/Index/" class="btn btn-outline-dark">Görüntüle</a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+
+                        @if(count == 0)
+                        {
+                            <a href="/Admin/About/CreateAbout/" class="btn btn-outline-primary">Ekle</a>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

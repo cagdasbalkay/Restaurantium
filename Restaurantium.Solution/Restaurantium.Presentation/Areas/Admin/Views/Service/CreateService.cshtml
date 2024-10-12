@@ -1,0 +1,46 @@
+﻿@model CreateServiceDto
+@{
+    ViewData["Title"] = "CreateService";
+    ViewData["IncludeValidationScripts"] = true;
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yeni Hizmet Girişi</h4>
+                        <p class="card-subtitle mb-4">Tüm bilgileri eksiksiz olarak doldurarak hizmet ekleme işlemini tamamlayabilirsiniz!  <a href="https://fontawesome.com/icons" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Buraya tıklayarak</a> kullanabileceğiniz ikon sınıflarına kolayca erişim sağlayabilirsiniz.</p>
+
+                        <form method="post">
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                <label for="exampleInputService">Hizmet</label>
+                                <input type="text" class="form-control" id="exampleInputService" placeholder="Hizmet adı giriniz." asp-for="serviceName">
+                                @Html.ValidationMessageFor(x => x.serviceName, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputDescription">Açıklama</label>
+                                <input type="text" class="form-control" id="exampleInputDescription" placeholder="Hizmet için bir açıklama metni giriniz." asp-for="description">
+                                @Html.ValidationMessageFor(x => x.description, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputIcon">İkon</label>
+                                <input type="text" class="form-control" id="exampleInputIcon" placeholder="İkon için bir sınıf ismi giriniz." asp-for="iconUrl">
+                                @Html.ValidationMessageFor(x => x.iconUrl, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Oluştur</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

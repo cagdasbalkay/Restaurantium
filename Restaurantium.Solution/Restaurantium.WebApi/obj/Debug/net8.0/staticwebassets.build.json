@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "/tZragbSm+zW1SdmPg6ltMxcIkJt4E+nHkGkCDSPMaI=",
+  "Source": "Restaurantium.WebApi",
+  "BasePath": "_content/Restaurantium.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

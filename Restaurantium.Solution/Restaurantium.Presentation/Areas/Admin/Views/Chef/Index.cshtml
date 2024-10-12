@@ -1,0 +1,84 @@
+﻿@model List<ResultChefDto>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Sosyal Medya Listesi</h4>
+                        <p class="card-subtitle mb-4">Bu sayfada şirkete ait sosyal medya hesaplarını görüntüleyebilir, silebilir yahut güncelleyebilirsiniz.</p>
+                        @if (Model.Count == 0)
+                        {
+                            <div class="alert alert-danger at-3" role="alert">
+                                <p><i>Daha önce eklenen herhangi bir veri <b>bulunamadı.</p>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="table-responsive">
+                                <table class="table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Şef</th>
+                                            <th>Uzmanlık</th>
+                                            <th>Sosyal Medya</th>
+                                            <th>Sil</th>
+                                            <th>Güncelle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            count++;
+                                            <tr>
+                                                <td>@count</td>
+                                                <td><img src="@item.ImageUrl" class="rounded-circle" width="50" height="50" style="margin-right: 7px;" />@item.Name</td>
+                                                <td>@item.Profession</td>
+                                                <td>
+                                                    <a href="@item.FacebookUrl">
+                                                        <i class="fa-brands fa-facebook fa-xl"></i>
+                                                    </a>
+                                                    <a href="@item.TwitterUrl">
+                                                        <i class="fa-brands fa-square-x-twitter fa-xl"></i>
+                                                    </a>
+                                                    <a href="@item.InstagramUrl">
+                                                        <i class="fa-brands fa-instagram fa-xl"></i>
+                                                    </a>
+                                                </td>
+
+
+
+                                                <td><a href="/Admin/Chef/RemoveChef/@item.ChefID" class="btn btn-outline-danger">Sil</a></td>
+                                                <td><a href="/Admin/Chef/UpdateChef/@item.ChefID" class="btn btn-outline-success">Güncelle</a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+
+                        <a href="/Admin/Chef/CreateChef/" class="btn btn-outline-primary">Ekle</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

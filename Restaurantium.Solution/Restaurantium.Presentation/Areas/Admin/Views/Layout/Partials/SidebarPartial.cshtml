@@ -1,0 +1,76 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
+
+<div class="vertical-menu">
+
+    <div data-simplebar class="h-100">
+
+        <div class="navbar-brand-box">
+            <a href="index.html" class="logo">
+                <i class="mdi mdi-alpha-x-circle"></i>
+                <span>
+                    Restaurantium
+                </span>
+            </a>
+        </div>
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="metismenu list-unstyled" id="side-menu">
+                <li class="menu-title">@localizer["Menü"]</li>
+
+                <li>
+                    <a href="/Admin/Dashboard/Index/" class="waves-effect"><i class="feather-airplay"></i><span>@localizer["Dashboard"]</span></a>
+                </li>
+                <li>
+                    <a href="/Admin/Statistic/Index/" class="waves-effect"><i class="fas fa-chart-pie"></i><span>@localizer["İstatistikler"]</span></a>
+                </li>
+                <li>
+                    <a href="/Home/Index/" class="waves-effect"><i class="fas fa-home"></i><span>@localizer["Siteye Git"]</span></a>
+                </li>
+                <li>
+
+                    <a href="/Admin/About/Index/" class="waves-effect"><i class="fa-solid fa-pen"></i><span>@localizer["Hakkımızda İşlemleri"]</span></a>
+                </li>
+                <li>
+                    <a href="/Admin/Banner/Index/" class="waves-effect"><i class="fa fa-star"></i><span>@localizer["Banner İşlemleri"]</span></a>
+                </li>
+                <li>
+                    <a href="/Admin/Booking/Index/" class="waves-effect"><i class="fas fa-calendar-alt"></i><span>@localizer["Rezervasyon İşlemleri"]</span></a>
+                </li>
+                <li>
+                    <a href="/Admin/Category/Index/" class="waves-effect"><i class="fa fa-filter"></i><span>@localizer["Kategori İşlemleri"]</span></a>
+                </li>
+                <li>
+                    <a href="/Admin/Chef/Index/" class="waves-effect"><i class="lni lni-chef-hat"></i><span>@localizer["Şef İşlemleri"]</span></a>
+                </li>
+                <li>
+                    <a href="/Admin/CompanySocialMedia/Index/" class="waves-effect"><i class="fa fa-share-alt"></i><span>@localizer["Sosyal Medya İşlemleri"]</span></a>
+                </li>
+                <li>
+                    <a href="/Admin/Contact/Index/" class="waves-effect"><i class="fa-solid fa-envelope"></i><span>@localizer["Ziyaretçi Mesajları"]</span></a>
+                </li>
+                <li>
+                    <a href="/Admin/Food/Index/" class="waves-effect"><i class="fa-solid fa-utensils"></i><span>@localizer["Yemek İşlemleri"]</span></a>
+                </li>
+                <li>
+                    <a href="/Admin/FooterContact/Index/" class="waves-effect"><i class="fa fa-phone"></i><span>@localizer["İletişim Bilgileri"]</span></a>
+                </li>
+                <li>
+                    <a href="/Admin/Service/Index/" class="waves-effect"><i class="lni lni-cogs"></i><span>@localizer["Hizmetler"]</span></a>
+                </li>
+                <li>
+                    <a href="/Admin/Subscribe/Index/" class="waves-effect"><i class="fas fa-newspaper"></i><span>@localizer["Abone İşlemleri"]</span></a>
+                </li>
+                <li>
+                    <a href="/Admin/Testimonial/Index/" class="waves-effect"><i class="fas fa-user-friends"></i><span>@localizer["Referans İşlemleri"]</span></a>
+                </li>
+                <li>
+                    <a href="/Admin/WorkingHour/Index/" class="waves-effect"><i class="fa-solid fa-business-time"></i><span>@localizer["Çalışma Saatleri"]</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- Sidebar -->
+    </div>
+</div>

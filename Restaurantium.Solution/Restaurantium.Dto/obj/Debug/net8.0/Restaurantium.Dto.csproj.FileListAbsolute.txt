@@ -1,0 +1,11 @@
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Dto\bin\Debug\net8.0\Restaurantium.Dto.deps.json
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Dto\bin\Debug\net8.0\Restaurantium.Dto.dll
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Dto\bin\Debug\net8.0\Restaurantium.Dto.pdb
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Dto\obj\Debug\net8.0\Restaurantium.Dto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Dto\obj\Debug\net8.0\Restaurantium.Dto.AssemblyInfoInputs.cache
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Dto\obj\Debug\net8.0\Restaurantium.Dto.AssemblyInfo.cs
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Dto\obj\Debug\net8.0\Restaurantium.Dto.csproj.CoreCompileInputs.cache
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Dto\obj\Debug\net8.0\Restaurantium.Dto.dll
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Dto\obj\Debug\net8.0\refint\Restaurantium.Dto.dll
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Dto\obj\Debug\net8.0\Restaurantium.Dto.pdb
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.Dto\obj\Debug\net8.0\ref\Restaurantium.Dto.dll

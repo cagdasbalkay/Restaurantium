@@ -1,0 +1,73 @@
+﻿@model List<ResultServiceDto>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Hizmet Listesi</h4>
+                        <p class="card-subtitle mb-4">Bu sayfada hizmetleri görüntüleyebilir, ekleyebilir, silebilir ve güncelleyebilirsiniz.</p>
+                        @if (Model.Count == 0)
+                        {
+                            <div class="alert alert-danger at-3" role="alert">
+                                <p><i>Daha önce eklenen herhangi bir veri <b>bulunamadı.</b> ekle butonunu kullanarak yeni veri girişi yapabilirsiniz.</i></p>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="table-responsive">
+                                <table class="table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Hizmet</th>
+                                            <th>Açıklama</th>
+                                            <th>İkon</th>
+                                            <th>Sil</th>
+                                            <th>Güncelle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            count++;
+                                            <tr>
+                                                <td>@count</td>
+                                                <td>@item.serviceName</td>
+                                                <td>@item.description</td>
+                                                <td> 
+                                        <i class="@item.iconUrl"/>
+                                        </td>
+
+
+                                                <td><a href="/Admin/Service/RemoveService/@item.serviceID" class="btn btn-outline-danger">Sil</a></td>
+                                                <td><a href="/Admin/Service/UpdateService/@item.serviceID" class="btn btn-outline-success">Güncelle</a></td>
+
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+
+                            <a href="/Admin/Service/CreateService/" class="btn btn-outline-primary">Ekle</a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

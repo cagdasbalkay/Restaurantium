@@ -1,0 +1,64 @@
+﻿@model CreateAboutDto
+@{
+    ViewData["Title"] = "CreateAbout";
+    ViewData["IncludeValidationScripts"] = true;
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yeni Hakkımızda Bilgisi Girişi</h4>
+                        <p class="card-subtitle mb-4">Tüm bilgileri eksiksiz olarak doldurarak anasayfada bulunan Hakkımızda alanına veri ekleme işlemini tamamlayabilirsiniz!</p>
+
+                        <form method="post">
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                <label for="exampleInputDescription">Açıklama</label>
+                                <input type="text" class="form-control" id="exampleInputDescription" placeholder="Hakkımızda alanında yazacak açıklamayı giriniz." asp-for="Description">
+                                @Html.ValidationMessageFor(x => x.Description, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputYearsOfExperience">Deneyim(Yıl)</label>
+                                <input type="number" class="form-control" id="exampleInputYearsOfExperience" placeholder="Restoranın kaç yıllık deneyimi olduğu bilgisini giriniz." asp-for="YearsOfExperience">
+                                @Html.ValidationMessageFor(x => x.YearsOfExperience, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputImage1">Görsel 1 Url</label>
+                                <input type="text" class="form-control" id="exampleInputImage1" placeholder="Hakkımızda alanında yer alacak ilk görselin url'sini giriniz" asp-for="Image1Url">
+                                @Html.ValidationMessageFor(x => x.Image1Url, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputImage2">Görsel 2 Url</label>
+                                <input type="text" class="form-control" id="exampleInputImage2" placeholder="Hakkımızda alanında yer alacak ikinci görselin url'sini giriniz" asp-for="Image2Url">
+                                @Html.ValidationMessageFor(x => x.Image2Url, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputImage3">Görsel 3 Url</label>
+                                <input type="text" class="form-control" id="exampleInputImage3" placeholder="Hakkımızda alanında yer alacak üçüncü görselin url'sini giriniz" asp-for="Image3Url">
+                                @Html.ValidationMessageFor(x => x.Image3Url, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputImage4">Görsel 4 Url</label>
+                                <input type="text" class="form-control" id="exampleInputImage4" placeholder="Hakkımızda alanında yer alacak dördüncü görselin url'sini giriniz" asp-for="Image4Url">
+                                @Html.ValidationMessageFor(x => x.Image4Url, null, new { @class = "invalid-feedback d-block" })
+                            </div>
+
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Oluştur</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

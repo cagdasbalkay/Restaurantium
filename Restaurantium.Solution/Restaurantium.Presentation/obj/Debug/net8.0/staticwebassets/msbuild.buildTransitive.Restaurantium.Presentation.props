@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Restaurantium.Presentation.props" />
+</Project>

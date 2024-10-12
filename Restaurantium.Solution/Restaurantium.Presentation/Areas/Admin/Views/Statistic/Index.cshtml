@@ -1,0 +1,309 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid"> 
+        <div class="row">
+            @* Şef Sayısı*@
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-primary border-primary">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Yetkinlik</span>
+                            <h5 class="card-title mb-0 text-white">Şef Sayısı</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center mb-0 text-white">
+                                 @ViewBag.ChefCount
+                                </h2>
+                            </div>
+                        </div>
+
+                        <div class="progress badge-soft-light shadow-sm" style="height: 5px;">
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.ChefCount%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @* Yemek Sayısı*@
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-success border-success">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Gurme</span>
+                            <h5 class="card-title mb-0 text-white">Yemek Sayısı</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center text-white mb-0">
+                                    @ViewBag.MealCount
+                                </h2>
+                            </div>
+                            
+                        </div>
+
+                        <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.MealCount%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            @* Hizmet Sayısı*@
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-warning border-warning">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Kalite</span>
+                            <h5 class="card-title mb-0 text-white">Verilen Hizmet Sayısı</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center text-white mb-0">
+                                    @ViewBag.ServiceCount
+                                </h2>
+                            </div>
+                            
+                        </div>
+
+                        <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.ServiceCount%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            @* Referans Sayısı*@
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-info border-info">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Memnuniyet</span>
+                            <h5 class="card-title mb-0 text-white">Referans Sayısı</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center text-white mb-0">
+                                    @ViewBag.TestimonialCount
+                                </h2>
+                            </div>
+
+                        </div>
+
+                        <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.TestimonialCount%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        <div class="row">
+
+
+            @*Ortalama Yemek Ücreti*@
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-danger border-danger">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Standart</span>
+                            <h5 class="card-title mb-0 text-white">Ortalama Yemek Ücreti</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center text-white mb-0">
+                                    @ViewBag.AvgMealPrice.ToString("0.####")
+                                </h2>
+                            </div>
+
+                        </div>
+
+                        <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @Math.Round(ViewBag.AvgMealPrice)%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*Ortalama Kahvaltı Ücreti*@
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-dark border-dark">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Sabah</span>
+                            <h5 class="card-title mb-0 text-white">Ortalama Kahvaltı Ücreti</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center text-white mb-0">
+                                    @ViewBag.AvgLunchPrice.ToString("0.####")
+                                </h2>
+                            </div>
+
+                        </div>
+
+                        <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+            <div class="progress-bar bg-light" role="progressbar" style="width:@Math.Round(ViewBag.AvgLunchPrice)%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*Ortalama Öğle Yemeği Ücreti*@
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-info border-info">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Öğle</span>
+                            <h5 class="card-title mb-0 text-white">Ort. Öğle Yemeği Ücreti</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center text-white mb-0">
+                                    @ViewBag.AvgBreakfastPrice.ToString("0.####")
+                                </h2>
+                            </div>
+
+                        </div>
+
+                        <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @Math.Round(ViewBag.AvgBreakfastPrice)%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*Ortalama Akşam Yemeği Ücreti*@
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-success border-success">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Akşam</span>
+                            <h5 class="card-title mb-0 text-white">Ort. Akşam Yemeği Ücreti</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center text-white mb-0">
+                                    @ViewBag.AvgDinnerPrice.ToString("0.####")
+                                </h2>
+                            </div>
+
+                        </div>
+
+                        <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @Math.Round(ViewBag.AvgDinnerPrice)%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        <div class="row">
+
+
+            @*En Pahalı Yemek*@
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-primary border-primary">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">VIP</span>
+                            <h5 class="card-title mb-0 text-white">En Pahalı Yemek</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h4 class="d-flex align-items-center text-white mb-0">
+                                    @ViewBag.MostExpensiveMeal
+                                </h4>
+                            </div>
+
+                        </div>
+                        <div class="mt-3 text-white">
+                            <i class="fas fa-gem"></i> Gurme Seçimi<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*En Ucuz Yemek*@
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-warning border-warning">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Bütçe Dostu</span>
+                            <h5 class="card-title mb-0 text-white">En Ucuz Yemek</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h4 class="d-flex align-items-center text-white mb-0">
+                                    @ViewBag.CheapestMeal
+                                </h4>
+                            </div>
+
+                        </div>
+                        <div class="mt-3 text-white">
+                            <i class="fas fa-hand-holding-usd"></i> Ekonomik Seçim<br>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            @*Gelen Mesaj Sayısı*@
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-danger border-danger">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">İletişim</span>
+                            <h5 class="card-title mb-0 text-white">Gelen Mesaj Sayısı</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center text-white mb-0">
+                                    @ViewBag.ContactMessageCount
+                                </h2>
+                            </div>
+
+                        </div>
+
+                        <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.ContactMessageCount%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @* Abone Sayısı*@
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-dark border-dark">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Topluluk</span>
+                            <h5 class="card-title mb-0 text-white">Abone Sayısı</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center text-white mb-0">
+                                    @ViewBag.SubscribeCount
+                                </h2>
+                            </div>
+
+                        </div>
+
+                        <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.SubscribeCount%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                    </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,14 @@
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.DataAccess\bin\Debug\net8.0\Restaurantium.DataAccess.deps.json
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.DataAccess\bin\Debug\net8.0\Restaurantium.DataAccess.runtimeconfig.json
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.DataAccess\bin\Debug\net8.0\Restaurantium.DataAccess.dll
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.DataAccess\bin\Debug\net8.0\Restaurantium.DataAccess.pdb
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.DataAccess\obj\Debug\net8.0\Restaurantium.DataAccess.csproj.AssemblyReference.cache
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.DataAccess\obj\Debug\net8.0\Restaurantium.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.DataAccess\obj\Debug\net8.0\Restaurantium.DataAccess.AssemblyInfoInputs.cache
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.DataAccess\obj\Debug\net8.0\Restaurantium.DataAccess.AssemblyInfo.cs
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.DataAccess\obj\Debug\net8.0\Restaurantium.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.DataAccess\obj\Debug\net8.0\Restaurantium.DataAccess.dll
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.DataAccess\obj\Debug\net8.0\refint\Restaurantium.DataAccess.dll
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.DataAccess\obj\Debug\net8.0\Restaurantium.DataAccess.pdb
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.DataAccess\obj\Debug\net8.0\Restaurantium.DataAccess.genruntimeconfig.cache
+C:\Users\cagda\source\repos\Restaurantium.Solution\Restaurantium.DataAccess\obj\Debug\net8.0\ref\Restaurantium.DataAccess.dll
